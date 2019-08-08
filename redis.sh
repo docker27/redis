@@ -27,6 +27,10 @@ function _init() {
 
 # install
 function _install() {
+	if [ ! -d /opt/install/${downloan_file_name} ]; then
+		echo "redis tar not exist!!!"
+		exit -1;
+	fi
 	if [ ! -d /usr/local/redis/redis-3.4.12/ ]; then
 		tar -zxvf /opt/install/${downloan_file_name} -C /usr/local/redis
 		cd /usr/local/redis/redis-4.0.11/src/
