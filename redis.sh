@@ -31,6 +31,12 @@ function _install() {
 		echo "redis tar not exist!!!"
 		exit -1;
 	fi
+	
+	if [ $md5 != $redis_md5 ]; then
+               echo "redis md5 error !!!"
+               exit -1
+       fi	
+
 	if [ ! -d /usr/local/redis/redis-3.4.12/ ]; then
 		tar -zxvf /opt/install/${downloan_file_name} -C /usr/local/redis
 		cd /usr/local/redis/redis-4.0.11/src/
