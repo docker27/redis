@@ -27,7 +27,7 @@ function _init() {
 
 # install
 function _install() {
-	if [ ! -d /opt/install/${downloan_file_name} ]; then
+	if [ ! -f /opt/install/${downloan_file_name} ]; then
 		echo "redis tar not exist!!!"
 		exit -1;
 	fi
